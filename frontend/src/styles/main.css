@@ -18,7 +18,8 @@
 @layer components {
   /* Card styles */
   .card {
-    @apply bg-gradient-to-br var(--theme-primary, from-blue-50 to-blue-100) rounded-2xl shadow-soft border border-gray-200 p-6 hover:shadow-bright hover:scale-[1.02] transition-all duration-300;
+    background: var(--theme-primary, linear-gradient(to bottom right, #eff6ff, #dbeafe));
+    @apply rounded-2xl shadow-soft border border-gray-200 p-6 hover:shadow-bright hover:scale-[1.02] transition-all duration-300;
   }
 
   .card-header {
@@ -60,7 +61,8 @@
 
   /* Input styles */
   .input {
-    @apply w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-primary-200 focus:border-primary-400 bg-gradient-to-r var(--theme-primary, from-blue-50 to-blue-100) transition-all duration-300;
+    background: var(--theme-primary, linear-gradient(to right, #eff6ff, #dbeafe));
+    @apply w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-primary-200 focus:border-primary-400 transition-all duration-300;
   }
 
   .input-error {
@@ -77,7 +79,8 @@
 
   /* Table styles */
   .table-container {
-    @apply overflow-x-auto rounded-2xl shadow-soft bg-gradient-to-br var(--theme-primary, from-blue-50 to-blue-100) border border-gray-200;
+    background: var(--theme-primary, linear-gradient(to bottom right, #eff6ff, #dbeafe));
+    @apply overflow-x-auto rounded-2xl shadow-soft border border-gray-200;
   }
 
   .table {
@@ -152,12 +155,14 @@
   }
 
   .modal-content {
-    @apply bg-gradient-to-br var(--theme-primary, from-blue-50 to-blue-100) rounded-3xl shadow-2xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto border border-gray-200;
+    background: var(--theme-primary, linear-gradient(to bottom right, #eff6ff, #dbeafe));
+    @apply rounded-3xl shadow-2xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto border border-gray-200;
   }
 
   /* Sidebar */
   .sidebar {
-    @apply fixed left-0 top-0 h-full bg-gradient-to-br var(--theme-primary, from-blue-50 to-blue-100) shadow-2xl z-40 transform transition-all duration-300 border-r border-gray-200;
+    background: var(--theme-primary, linear-gradient(to bottom right, #eff6ff, #dbeafe));
+    @apply fixed left-0 top-0 h-full shadow-2xl z-40 transform transition-all duration-300 border-r border-gray-200;
   }
 
   .sidebar-open {
@@ -175,7 +180,8 @@
 
   /* Navbar */
   .navbar {
-    @apply fixed top-0 left-0 right-0 bg-gradient-to-br var(--theme-primary, from-blue-50 to-blue-100) shadow-lg z-50 border-b border-gray-200;
+    background: var(--theme-primary, linear-gradient(to bottom right, #eff6ff, #dbeafe));
+    @apply fixed top-0 left-0 right-0 shadow-lg z-50 border-b border-gray-200;
   }
 
   /* Responsive utilities */
