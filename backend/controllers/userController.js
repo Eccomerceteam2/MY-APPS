@@ -16,6 +16,42 @@ exports.register = async (req, res) => {
       address
     } = req.body;
 
+    // Validation
+    // Email must be @gmail.com
+    if (!email.endsWith('@gmail.com')) {
+      return res.status(400).json({
+        error: 'Email harus menggunakan domain @gmail.com'
+      });
+    }
+
+    // Password validation: min 8 chars, must contain letters and numbers
+    if (password.length < 8) {
+      return res.status(400).json({
+        error: 'Password minimal 8 karakter'
+      });
+    }
+
+    const hasLetter = /[a-zA-Z]/.test(password);
+    const hasNumber = /\d/.test(password);
+    if (!hasLetter || !hasNumber) {
+      return res.status(400).json({
+        error: 'Password harus menggabungkan huruf dan angka'
+      });
+    }
+
+    // Username validation: lowercase letters only, min 6 chars
+    if (username.length < 6) {
+      return res.status(400).json({
+        error: 'Username minimal 6 karakter'
+      });
+    }
+
+    if (!/^[a-z]+$/.test(username)) {
+      return res.status(400).json({
+        error: 'Username hanya boleh huruf kecil tanpa spasi'
+      });
+    }
+
     // Check if user already exists
     const existingUser = await User.findOne({
       where: {

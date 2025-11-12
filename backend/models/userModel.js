@@ -22,7 +22,12 @@ const User = sequelize.define('User', {
     unique: true,
     validate: {
       notEmpty: true,
-      len: [3, 50]
+      len: [6, 50],
+      isLowercase(value) {
+        if (!/^[a-z]+$/.test(value)) {
+          throw new Error('Username hanya boleh huruf kecil tanpa spasi');
+        }
+      }
     }
   },
   email: {
@@ -30,7 +35,12 @@ const User = sequelize.define('User', {
     allowNull: false,
     unique: true,
     validate: {
-      isEmail: true
+      isEmail: true,
+      isGmail(value) {
+        if (!value.endsWith('@gmail.com')) {
+          throw new Error('Email harus menggunakan domain @gmail.com');
+        }
+      }
     }
   },
   password: {
@@ -38,7 +48,14 @@ const User = sequelize.define('User', {
     allowNull: false,
     validate: {
       notEmpty: true,
-      len: [6, 255]
+      len: [8, 255],
+      hasLetterAndNumber(value) {
+        const hasLetter = /[a-zA-Z]/.test(value);
+        const hasNumber = /\d/.test(value);
+        if (!hasLetter || !hasNumber) {
+          throw new Error('Password harus menggabungkan huruf dan angka');
+        }
+      }
     }
   },
   full_name: {

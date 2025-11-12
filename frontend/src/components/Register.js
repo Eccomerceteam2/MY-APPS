@@ -37,8 +37,37 @@ function Register({ onSwitchToLogin, onRegistrationSuccess }) {
       return;
     }
 
-    if (formData.password.length < 6) {
-      setError('Password minimal 6 karakter');
+    // Email validation: must be @gmail.com
+    if (!formData.email.endsWith('@gmail.com')) {
+      setError('Email harus menggunakan domain @gmail.com');
+      setLoading(false);
+      return;
+    }
+
+    // Password validation: min 8 chars, must contain letters and numbers
+    if (formData.password.length < 8) {
+      setError('Password minimal 8 karakter');
+      setLoading(false);
+      return;
+    }
+
+    const hasLetter = /[a-zA-Z]/.test(formData.password);
+    const hasNumber = /\d/.test(formData.password);
+    if (!hasLetter || !hasNumber) {
+      setError('Password harus menggabungkan huruf dan angka');
+      setLoading(false);
+      return;
+    }
+
+    // Username validation: lowercase letters only, min 6 chars
+    if (formData.username.length < 6) {
+      setError('Username minimal 6 karakter');
+      setLoading(false);
+      return;
+    }
+
+    if (!/^[a-z]+$/.test(formData.username)) {
+      setError('Username hanya boleh huruf kecil tanpa spasi');
       setLoading(false);
       return;
     }
