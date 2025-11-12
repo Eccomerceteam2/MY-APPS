@@ -3,23 +3,15 @@ import { FaPalette, FaCheck } from 'react-icons/fa';
 
 function ThemeSelector() {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedTheme, setSelectedTheme] = useState('yellow-green');
+  const [selectedTheme, setSelectedTheme] = useState('yellow');
 
   const themes = [
     {
-      name: 'yellow-green',
-      label: 'Kuning Hijau',
+      name: 'yellow',
+      label: 'Kuning',
       colors: {
-        primary: 'from-yellow-50 to-green-50',
-        gradient: 'linear-gradient(to top, #ffff66 15%, #99ff99 92%)'
-      }
-    },
-    {
-      name: 'blue',
-      label: 'Biru',
-      colors: {
-        primary: 'from-blue-50 to-blue-100',
-        gradient: 'linear-gradient(to top, #66ffff 15%, #99ff99 92%)'
+        primary: 'from-yellow-50 to-yellow-100',
+        gradient: 'linear-gradient(to top, #ffff66 15%, #ffff99 92%)'
       }
     },
     {
@@ -31,27 +23,11 @@ function ThemeSelector() {
       }
     },
     {
-      name: 'purple',
-      label: 'Ungu',
+      name: 'red',
+      label: 'Merah',
       colors: {
-        primary: 'from-purple-50 to-purple-100',
-        gradient: 'linear-gradient(to top, #9966ff 15%, #cc99ff 92%)'
-      }
-    },
-    {
-      name: 'pink',
-      label: 'Merah Muda',
-      colors: {
-        primary: 'from-pink-50 to-pink-100',
-        gradient: 'linear-gradient(to top, #ff66cc 15%, #ff99dd 92%)'
-      }
-    },
-    {
-      name: 'orange',
-      label: 'Orange',
-      colors: {
-        primary: 'from-orange-50 to-orange-100',
-        gradient: 'linear-gradient(to top, #ff9966 15%, #ffcc99 92%)'
+        primary: 'from-red-50 to-red-100',
+        gradient: 'linear-gradient(to top, #ff6666 15%, #ff9999 92%)'
       }
     },
     {
@@ -60,6 +36,14 @@ function ThemeSelector() {
       colors: {
         primary: 'from-teal-50 to-teal-100',
         gradient: 'linear-gradient(to top, #66ffff 15%, #99cccc 92%)'
+      }
+    },
+    {
+      name: 'purple',
+      label: 'Ungu',
+      colors: {
+        primary: 'from-purple-50 to-purple-100',
+        gradient: 'linear-gradient(to top, #9966ff 15%, #cc99ff 92%)'
       }
     }
   ];
@@ -71,7 +55,7 @@ function ThemeSelector() {
       setSelectedTheme(savedTheme);
       applyTheme(savedTheme);
     }
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const applyTheme = (themeName) => {
     const theme = themes.find(t => t.name === themeName);
