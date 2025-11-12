@@ -3,9 +3,17 @@ import { FaPalette, FaCheck } from 'react-icons/fa';
 
 function ThemeSelector() {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedTheme, setSelectedTheme] = useState('blue');
+  const [selectedTheme, setSelectedTheme] = useState('yellow-green');
 
   const themes = [
+    {
+      name: 'yellow-green',
+      label: 'Kuning Hijau',
+      colors: {
+        primary: 'from-yellow-50 to-green-50',
+        gradient: 'linear-gradient(to top, #ffff66 15%, #99ff99 92%)'
+      }
+    },
     {
       name: 'blue',
       label: 'Biru',
