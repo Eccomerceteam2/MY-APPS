@@ -2,7 +2,7 @@
   "name": "e-aset-tracker-frontend",
   "version": "1.0.0",
   "description": "Frontend for E-Aset Tracker - PSAK 16 Compliant Asset Management",
-  "homepage": "https://eccomerceteam2.github.io/MY-APPS",
+
   "private": true,
   "scripts": {
     "start": "react-scripts start",

@@ -3,8 +3,8 @@ import { FaLock, FaUser, FaEnvelope } from 'react-icons/fa';
 import axios from 'axios';
 
 function Login({ onLogin, onSwitchToRegister, onSwitchToVerification }) {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('m86velg');
+  const [password, setPassword] = useState('m86velgbalam');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -126,11 +126,13 @@ function Login({ onLogin, onSwitchToRegister, onSwitchToVerification }) {
 
           {/* Demo Credentials */}
           <div className="mt-4 p-4 bg-blue-50 rounded-lg">
-            <p className="text-sm text-gray-600 font-semibold mb-2">Untuk testing - daftar akun baru atau gunakan:</p>
+            <p className="text-sm text-gray-600 font-semibold mb-2">Untuk testing - gunakan akun sementara:</p>
             <div className="text-xs text-gray-600 space-y-1">
-              <p>1. Daftar akun baru → Verifikasi email → Login</p>
-              <p>2. Atau gunakan akun yang sudah terdaftar</p>
+              <p><strong>Username:</strong> admin</p>
+              <p><strong>Password:</strong> admin123</p>
+              <p><strong>Email:</strong> admin@gmail.com</p>
             </div>
+            <p className="text-xs text-gray-500 mt-2">Atau daftar akun baru → Verifikasi email → Login</p>
           </div>
         </div>
 

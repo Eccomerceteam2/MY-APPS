@@ -12,22 +12,23 @@ async function createTempUser() {
     }
 
     const tempUser = await User.create({
-      username: 'tempuser',
-      email: 'temp@example.com',
-      password: 'temppass123',
-      full_name: 'Temporary User',
-      business_name: null,
-      business_type: 'personal',
+      username: 'm86velg',
+      email: 'mvelgbandarlampung@gmail.com',
+      password: 'm86velgbalam',
+      full_name: 'Bengkel M86 Velg',
+      business_name: 'BengkelM86Velg',
+      business_type: 'business',
       phone: null,
       address: null,
       is_verified: true,
       verification_token: null
     });
 
-    console.log('Temporary user created successfully!');
-    console.log('Username: tempuser');
-    console.log('Password: temppass123');
-    console.log('Email: temp@example.com');
+    console.log('Company user created successfully!');
+    console.log('Username: m86velg');
+    console.log('Password: m86velgbalam');
+    console.log('Email: mvelgbandarlampung@gmail.com');
+    console.log('Business Name: BengkelM86Velg');
     console.log('Verified: Yes');
 
     process.exit(0);

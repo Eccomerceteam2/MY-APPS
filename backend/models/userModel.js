@@ -24,8 +24,8 @@ const User = sequelize.define('User', {
       notEmpty: true,
       len: [6, 50],
       isLowercase(value) {
-        if (!/^[a-z]+$/.test(value)) {
-          throw new Error('Username hanya boleh huruf kecil tanpa spasi');
+        if (!/^[a-z0-9]+$/.test(value)) {
+          throw new Error('Username hanya boleh huruf kecil dan angka tanpa spasi');
         }
       }
     }
